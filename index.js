@@ -1,4 +1,4 @@
-
+const coin = document.getElementById("currnet_coin")
 
 const nationalCall = document.getElementById("national_emergency_call");
 
@@ -17,24 +17,34 @@ const antiCorruptionCall = document.getElementById("anti_corruption_call");
 const bracCall = document.getElementById ("brac_helpline_call");
 
 const railwayCall = document.getElementById ("railway_helpline_call");
-const na
+
+function mamun(nameId , numId){
+  const serviceName = document.getElementById(nameId).innerText;
+  const serviceNum = document.getElementById(numId).innerText;
+  alert (serviceName + " " + serviceNum);
+  const currnetCoin = parseInt(coin.innerText)-20
+  coin.innerText = currnetCoin
+  
+}
 
 
 
 
 
 
-//   nationalButton.addEventListener("click", function(){
-//     const serviceName = document.getElementById("service_name1").innerText;
-//     const serviceNum = document.getElementById("service_num1").innerText;
-//     console.log(serviceName , serviceNum)
-//       alert( serviceName , serviceNum)
-// })
+nationalCall.addEventListener("click", function(){
+    const serviceName = document.getElementById("service_name1").innerText;
+    const serviceNum = document.getElementById("service_num1").innerText;
 
-//  policeButton.addEventListener("click", function(){
-//     console.log("clicked")
+    console.log(serviceName , serviceNum)
+      alert( serviceName +" "+ serviceNum)
 
-//  })
+     const currnetCoin = parseInt( coin.innerText) - 20
+     coin.innerText = currnetCoin;
+
+})
+
+ policeButton.addEventListener("click", mamun("service_name2" , "service_num2" ))
 
 //  fireButton.addEventListener("click", function(){
 //   console.log("clicked")
