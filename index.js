@@ -1,5 +1,5 @@
 const callHistory = []
-const coin = parseInt(document.getElementById("currnet_coin").innerText);
+const coin = document.getElementById("current_coin");
 const heart = document.getElementById("love_add");
 const copy = document.getElementById("copy_num");
 
@@ -8,16 +8,11 @@ function heartAdd(){
 
  heart.innerText = currentHeart;
 }
-
-function coinAdd(){
-  if(coin > 20){
-    const currentCoin = coin - 20 ;
-  coin.innerText = currentCoin;}
-  else{
-    console.log("Not Sufficient Coin")
-  }
-  
+function coinAdd() {
+  const currentCoin = parseInt(coin.innerText) - 20;
+  coin.innerText = currentCoin;
 }
+
 
 function copyAdd(num){
   const copyText = document.getElementById(num).innerText
@@ -38,38 +33,46 @@ const now = new Date();
 
   callHistory.push(history);
 }
-function call(nameId , numId){
+function call(nameId, numId) {
   const serviceName = document.getElementById(nameId).innerText;
   const serviceNum = document.getElementById(numId).innerText;
-  alert ("calling"+ " " +serviceName + " " + serviceNum);
- callHistoryAdd (serviceName , serviceNum);
- 
-//  const callHistoryContainer = document.getElementById("history_container");
-//  callHistoryContainer.innerText = "";
-//  for(const history of callHistoryAdd){
-//   const newElement = document.createElement("div")
-//   newElement.innerHtml = `
-//   <div class="bg-[#FAFAFA] rounded-xl p-4 flex justify-between items-center my-5">
-        
-//           <div>
-//             <h1 class="font-semibold text-lg text-[#111111] ">
-//             ${history.name}
-//             </h1>
-//             <p class="text-lg text-[#5C5C5C] ">
-//             999
-//             </p>
-//           </div>
-      
-//       <p class="text-lg text-[#111111] ">${history.time}</p>
-//       </div> `
-//       callHistoryContainer.appendChild(newElement);
-//  }
+  if (parseInt(coin.innerText) >= 20) {
 
-//  const currentCoin = parseInt(coin.innerText)-20
-//   coin.innerText = currentCoin;
-coinAdd()
-  
-  
+    coinAdd()
+    alert("calling" + " " + serviceName + " " + serviceNum);
+    callHistoryAdd(serviceName, serviceNum);
+  } 
+  else {
+
+    alert("NOt Sufficient Coin");
+  }
+
+  //  const callHistoryContainer = document.getElementById("history_container");
+  //  callHistoryContainer.innerText = "";
+  //  for(const history of callHistoryAdd){
+  //   const newElement = document.createElement("div")
+  //   newElement.innerHtml = `
+  //   <div class="bg-[#FAFAFA] rounded-xl p-4 flex justify-between items-center my-5">
+
+  //           <div>
+  //             <h1 class="font-semibold text-lg text-[#111111] ">
+  //             ${history.name}
+  //             </h1>
+  //             <p class="text-lg text-[#5C5C5C] ">
+  //             999
+  //             </p>
+  //           </div>
+
+  //       <p class="text-lg text-[#111111] ">${history.time}</p>
+  //       </div> `
+  //       callHistoryContainer.appendChild(newElement);
+  //  }
+
+  //  const currentCoin = parseInt(coin.innerText)-20
+  //   coin.innerText = currentCoin;
+
+
+
 }
 
 
