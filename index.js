@@ -35,7 +35,7 @@ const now = new Date();
 }
 
 
-function callHistoryData(){
+function addToCallHistory(){
   const callHistoryContainer = document.getElementById("history_container");
    callHistoryContainer.innerText = "";
    for(const history of callHistory){
@@ -74,7 +74,7 @@ function call(nameId, numId) {
     alert("NOt Sufficient Coin");
   }
 
-  callHistoryData()
+  addToCallHistory()
 }
 
 
